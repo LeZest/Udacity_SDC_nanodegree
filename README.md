@@ -34,3 +34,8 @@ GIT Tutorial
     - git log
     - git --help
 
+Python3 commands
+$ python3 --version
+Python 3.7.0
+pip list : list all python modules installed in system
+python3 -m pip install
