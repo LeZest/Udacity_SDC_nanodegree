@@ -159,7 +159,7 @@ The code for this section is written in IPython notebook "CarND-Advanced-Lane-Li
 
 The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Pipeline](#Video-Pipeline)
 
-Here's a [link to video output]:[video1]
+Here's a [link to video output][video1]
 
 ---
 
