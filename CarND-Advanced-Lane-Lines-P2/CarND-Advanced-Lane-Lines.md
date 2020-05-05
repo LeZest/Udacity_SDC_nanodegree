@@ -47,7 +47,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the IPython notebook "CarND-Advanced-Lane-Lines.ipynb" [Section title](#Compute-the-camera-calibration-matrix-and-distortion-coefficients)
+The code for this step is contained in the IPython notebook "CarND-Advanced-Lane-Lines.ipynb" [Compute the camera calibration matrix and distortion coefficients](#Compute-the-camera-calibration-matrix-and-distortion-coefficients)
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -67,7 +67,7 @@ To demonstrate this step, I defined a function `cal_undistort` that takes `image
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Section title](#Combine-gradients-&-S-Color-thresholds-to-create-a-thresholded-binary-image.)
+The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Combine gradients & S Color thresholds to create a thresholded binary image.](#Combine-gradients-&-S-Color-thresholds-to-create-a-thresholded-binary-image.)
 
 A function `combine_col_grad()` is defined to combine color transforms & gradients to create thresholded binary image. 
 ```python
@@ -84,7 +84,7 @@ Here's an example of my output for this step.
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Section title](#Perspective-transform)
+The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Perspective transform](#Perspective-transform)
 The `dewarp()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I used an image with straight lane lines to determine `src` co-ordinates and manually fitting the `src` to `dst`. Here is my `src` & `dst` values.  
 
 ```python
@@ -126,7 +126,8 @@ I also converted the combined threshold image into **warped binary image**, whic
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Section title](#Perspective-transform) 
+The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Detect lane pixels and fit to find the lane boundary](#Detect-lane-pixels-and-fit-to-find-the-lane-boundary.) 
+
 - defined a `hist()` function to calculate histogram of the **warped binary image**. Histogram with the highest peak on each side of the midpoint is taken as left & right lane and used as reference for detecting left and right lane lines in the next step. 
 - defined `find_lane-pixels()` which takes **warped binary image** as input and used the sliding window approach to detect the active pixels in left and right lines and returns the coordinates **leftx, lefty, rightx, righty** 
 - defined `fit_polynomial()` which takes the coordinates from previous steps as input and determines the best fit polynomial of 2nd order and plots on the **warped binary image** 
@@ -138,7 +139,7 @@ Confirmed that the function implementation is working fine and tested on the **w
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Curvature & Vechicle position](#Determine-the-curvature-of-the-lane-and-vehicle-position-with-respect-to-center.)
+The code for this section is written in IPython notebook "CarND-Advanced-Lane-Lines.ipynb"[Curvature & Vehicle position](#Determine-the-curvature-of-the-lane-and-vehicle-position-with-respect-to-center.)
 
 - defined `measure_curvature_pixels() & measure_curvature_real()` to calculate curvature of left & right lane and then took an average of the same in number of pixels & 'meters'. 
 - defined `vehicle_offset()` to calculate the distance in 'cm' by calculating the difference between center of the image and center of the lane line using the polynomial fit function. 
