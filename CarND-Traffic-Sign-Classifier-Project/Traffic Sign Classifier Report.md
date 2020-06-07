@@ -181,11 +181,11 @@ For the 2nd to 5th images, the probability for the 1st class id was above 99%. A
 Image 4: STOP
 | Probability	|Prediction ID	|Prediction 		| 
 |:-------------:|:-------------:|:-----------------:| 
-| 0.482    		|14 			| STOP  			| 
-| 0.349    		|33 			| Turn right ahead	|
-| 0.119   		|17				| No Entry 			|
-| 0.049    		|34				| Turn right ahead	|
-| 0.0002		|38				| Keep Right		|
+| 0.999    		|14 			| STOP  			| 
+| 0.000   		|33 			| Turn right ahead	|
+| 0.000   		|17				| No Entry 			|
+| 0.000    		|34				| Turn right ahead	|
+| 0.000 		|38				| Keep Right		|
 
 
 
